@@ -1,5 +1,7 @@
 var arrayOfIds = [[9, "AM"],[10, "AM"],[11, "AM"],[12, "PM"],[1, "PM"],[2, "PM"],[3, "PM"],[4, "PM"],[5, "PM"],[6, "PM"],[7, "PM"],[8, "PM"]];
 
+var timeQ;
+
 var date = moment();
 
 var dayOfWeek = date.format('dddd');
@@ -76,11 +78,16 @@ for (var i = 0; i < arrayOfIds.length; i++) {
     }
 
 }
-/** 
+
+//Button that saves
 $(".saveBtn").on("click", function() {
-    var input = document.getElementById(this).value;
-    localStorage.setItem("5PM", input);
-    //var inputText = $(this).siblings(".4PM");
-    //console.log(inputText);
+    var value = $(this).siblings(".description").val();
+    var idStoringValue = $(this).siblings(".description")[0].id;
+    
+    localStorage.setItem(idStoringValue, value);
 });
-*/
+
+//at the start of using this program this makes sure all values in local storage are shown
+for (var i = 0; i < arrayOfIds.length; i++){
+    document.getElementById(arrayOfIds[i][0]+arrayOfIds[i][1]).innerHTML = localStorage.getItem(arrayOfIds[i][0]+arrayOfIds[i][1]);
+}
