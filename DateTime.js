@@ -18,9 +18,6 @@ var splitHours = timeCheck.split(":");
 //Gets the hours number of the time
 var hoursNumber = splitHours[0];
 
-console.log(splitVal);
-console.log(hoursNumber);
-
 
 //checks if the time is in PM
 var ifPM = false;
@@ -79,4 +76,11 @@ for (var i = 0; i < arrayOfIds.length; i++) {
     }
 
 }
-
+/** 
+$(".saveBtn").on("click", function() {
+    var input = document.getElementById(this).value;
+    localStorage.setItem("5PM", input);
+    //var inputText = $(this).siblings(".4PM");
+    //console.log(inputText);
+});
+*/
