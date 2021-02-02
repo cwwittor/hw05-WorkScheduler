@@ -55,7 +55,7 @@ for (var i = 0; i < arrayOfIds.length; i++) {
 
 
     //in this case it is AM, so it has to figure out what values would be equal to current time along with which would be in past and future
-    } else if (ifPM == false && arrayOfIds[i].charAt(0) == "A") {
+    } else if (ifPM == false && arrayOfIds[i][1].charAt(0) == "A") {
         if  (hoursNumber == arrayOfIds[i][0]){
             document.getElementById(arrayOfIds[i][0]+arrayOfIds[i][1]).classList.remove("future");
             document.getElementById(arrayOfIds[i][0]+arrayOfIds[i][1]).classList.add("present");
@@ -73,7 +73,7 @@ for (var i = 0; i < arrayOfIds.length; i++) {
 
 
     //in this case it is AM, so all PM values are future
-    } else if (ifPM == false && arrayOfIds[i].charAt(0) == "P") {
+    } else if (ifPM == false && arrayOfIds[i][1].charAt(0) == "P") {
         //keeps it as future tense
     }
 
